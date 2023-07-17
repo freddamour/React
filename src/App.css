@@ -1,84 +1,94 @@
+/* Configuration générale du corps du document */
 body {
-  font-family: Arial, sans-serif;
-  padding: 2em;
-  background-color: #141414;
+  font-family: Arial, sans-serif;  /* Définit la police du document */
+  padding: 2em;  /* Ajoute un espace autour du contenu du corps */
+  background-color: #141414;  /* Définit la couleur d'arrière-plan du corps */
 }
 
+/* Configuration de la disposition de l'application */
 .app {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  background-color: #141414;
-  color: white;
+  display: flex;  /* Utilise le modèle de boîte flexible pour la mise en page */
+  flex-wrap: wrap;  /* Permet aux éléments flexibles de se mettre à la ligne */
+  justify-content: space-around;  /* Répartit les éléments avec un espace autour d'eux */
+  background-color: #141414;  /* Définit la couleur d'arrière-plan du conteneur */
+  color: white;  /* Définit la couleur du texte */
 }
 
-.card {
-  flex: 1 0 300px;
-  background-color: #141414;
-  border-radius: 15px;
-  margin: 1em;
-  overflow: hidden;
-  opacity: 0.2;
-  transform: translateY(20px);
-  transition: opacity 0.5s, transform 0.5s;
+/* Configuration du style des cartes */
+.carte {
+  flex: 1 0 300px;  /* Définit la flexibilité des cartes */
+  background-color: #141414;  /* Définit la couleur d'arrière-plan des cartes */
+  border-radius: 15px;  /* Arrondit les coins des cartes */
+  margin: 1em;  /* Ajoute un espace autour des cartes */
+  overflow: hidden;  /* Empêche le contenu de déborder du cadre de la carte */
+  opacity: 0.2;  /* Rend les cartes partiellement transparentes */
+  transform: translateY(20px);  /* Déplace les cartes de 20px vers le bas */
+  transition: opacity 0.5s, transform 0.5s;  /* Définit une transition douce pour l'opacité et la transformation */
 }
 
-.card.scroll-animation {
-  opacity: 1;
-  transform: translateY(0);
+/* Animation lors du défilement */
+.carte.animation-defilement {
+  opacity: 1;  /* Rend les cartes complètement opaques lors du défilement */
+  transform: translateY(0);  /* Ramène les cartes à leur position d'origine lors du défilement */
 }
 
-.card:hover {
-  transform: scale(1.05);
+/* Animation lors du survol */
+.carte:hover {
+  transform: scale(1.05);  /* Augmente la taille des cartes de 5% lors du survol */
 }
 
-.card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 15px 15px 0 0;
+/* Configuration des images des cartes */
+.carte img {
+  width: 100%;  /* Définit la largeur des images */
+  height: 200px;  /* Définit la hauteur des images */
+  object-fit: cover;  /* Redimensionne l'image pour remplir la boîte tout en maintenant son aspect ratio */
+  border-radius: 15px 15px 0 0;  /* Arrondit les coins supérieurs de l'image */
 }
 
-.card h2 {
-  margin: 1em 0;
-  color: #e50914;
+/* Configuration du titre des cartes */
+.carte h2 {
+  margin: 1em 0;  /* Ajoute un espace au-dessus et en dessous des titres */
+  color: #e50914;  /* Définit la couleur des titres */
 }
 
-.card p {
-  margin: 0.5em 1em;
-  color: #999;
+/* Configuration du paragraphe des cartes */
+.carte p {
+  margin: 0.5em 1em;  /* Ajoute un espace autour des paragraphes */
+  color: #999;  /* Définit la couleur des paragraphes */
 }
 
-.card p span {
-  font-weight: bold;
-  color: #eee;
+/* Configuration du style du texte en gras dans les paragraphes */
+.carte p span {
+  font-weight: bold;  /* Rend le texte en gras */
+  color: #eee;  /* Définit la couleur du texte en gras */
 }
 
-.card a {
-  display: inline-block;
-  margin: 1em;
-  padding: 0.5em 1em;
-  background-color: #e50914;
-  color: white;
-  border-radius: 5px;
-  text-decoration: none;
+/* Configuration du style du lien pour plus d'informations */
+.carte a {
+  display: inline-block;  /* Rend le lien bloc inline */
+  margin: 1em;  /* Ajoute un espace autour du lien */
+  padding: 0.5em 1em;  /* Ajoute un espace à l'intérieur du lien */
+  background-color: #e50914;  /* Définit la couleur d'arrière-plan du lien */
+  color: white;  /* Définit la couleur du texte du lien */
+  border-radius: 5px;  /* Arrondit les coins du lien */
+  text-decoration: none;  /* Supprime la décoration de texte par défaut (soulignement) */
 }
 
-/* Media queries for responsiveness */
+/* Configuration de la réactivité en fonction de la taille de l'écran */
 @media (max-width: 600px) {
-  .card {
-    flex: 1 0 100%;
+  .carte {
+    flex: 1 0 100%;  /* Les cartes occupent 100% de la largeur de l'écran lorsque la largeur est inférieure ou égale à 600px */
   }
 }
 
 @media (min-width: 601px) and (max-width: 900px) {
-  .card {
-    flex: 1 0 45%;
+  .carte {
+    flex: 1 0 45%;  /* Les cartes occupent 45% de la largeur de l'écran lorsque la largeur est comprise entre 601px et 900px */
   }
 }
 
 @media (min-width: 901px) {
-  .card {
-    flex: 1 0 30%;
+  .carte {
+    flex: 1 0 30%;  /* Les cartes occupent 30% de la largeur de l'écran lorsque la largeur est supérieure à 900px */
   }
 }
