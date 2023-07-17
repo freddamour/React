@@ -1,43 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="fr">
+
+<head>
+    <!-- charset="utf-8" spécifie l'encodage des caractères pour le document -->
     <meta charset="utf-8" />
+
+    <!-- Ceci définit l'icône de la page qui apparaît à côté du titre de la page dans l'onglet du navigateur. -->
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+
+    <!-- Ceci est important pour le design réactif. Il donne au navigateur des instructions sur comment contrôler les dimensions et l'échelle de la page. -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Ceci définit la couleur du thème pour votre application. Cette couleur est parfois utilisée par les navigateurs mobiles pour la barre d'adresse. -->
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
+
+    <!-- Ceci définit une description pour votre site web, qui peut être utilisée par les moteurs de recherche. -->
+    <meta name="description" content="Site Web créé en utilisant create-react-app" />
+
+    <!-- Ceci définit l'icône qui sera utilisée si quelqu'un ajoute votre application à l'écran d'accueil sur un appareil Apple. -->
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+
     <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+      Ceci est une référence à un fichier manifeste pour les applications web progressives (PWA).
+      Le fichier manifeste contient des informations sur votre application (telles que le nom, l'auteur, l'icône, et la description)
+      qui sont utilisées lors de l'installation de l'application sur l'écran d'accueil d'un appareil.
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
+    <!--
+      Remarquez l'utilisation de %PUBLIC_URL% dans les balises ci-dessus.
+      Elle sera remplacée par l'URL du dossier `public` lors de la construction du projet.
+      Seuls les fichiers à l'intérieur du dossier `public` peuvent être référencés à partir du HTML.
+      Contrairement à "/favicon.ico" ou "favicon.ico", "%PUBLIC_URL%/favicon.ico" fonctionnera correctement.
     -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+</head>
+
+<body>
+    <noscript>Vous devez activer JavaScript pour exécuter cette application.</noscript>
     <div id="root"></div>
     <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
+      Ceci est là où React "attache" votre application.
+      Ne pas ajouter de code HTML ici, car React le remplacera.
     -->
-  </body>
+</body>
+
 </html>
+
