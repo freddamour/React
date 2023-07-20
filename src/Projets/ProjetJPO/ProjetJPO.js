@@ -9,6 +9,7 @@ function ProjetJPO() {
   const [chargement, setChargement] = useState(true);
   const [erreur, setErreur] = useState(null);
   const refCartes = useRef([]);
+  
 
   // Utilisation de useEffect pour charger les données à partir d'un lien externe lors du montage du composant
   useEffect(() => {
@@ -17,12 +18,15 @@ function ProjetJPO() {
       .then(donnees => {
         // Suppression du préambule et de la virgule finale
         const json = JSON.parse(donnees.substr(47).slice(0, -2));
+        //console.log("mon json", json);
+        //debugger
         // Mise à jour des données
         setDonnees(json.table.rows.map(ligne => {
           const enregistrement = {};
           ligne.c.forEach((cellule, i) => {
             enregistrement[json.table.cols[i].label] = cellule ? cellule.v : null;
           });
+
           return enregistrement;
         }));
         // Arrêt du chargement
@@ -34,32 +38,33 @@ function ProjetJPO() {
         setErreur(erreur);
         setChargement(false);
       });
-  }, []);
-
-  // Utilisation de useEffect pour gérer l'animation de défilement
-  useEffect(() => {
-    const gererDefilement = () => {
-      refCartes.current.forEach((carte, i) => {
-        const rect = carte.getBoundingClientRect();
-        if (rect.top <= window.innerHeight - rect.height / 2) {
-          carte.classList.add('animation-defilement');
-        }
-        if (rect.bottom <= 0 || rect.top >= window.innerHeight) {
-          carte.classList.remove('animation-defilement');
-        }
-      });
-    };
-    window.addEventListener('scroll', gererDefilement);
-    return () => window.removeEventListener('scroll', gererDefilement);
+    }, []);
+    
+    // Utilisation de useEffect pour gérer l'animation de défilement
+    useEffect(() => {
+      const gererDefilement = () => {
+        refCartes.current.forEach((carte, i) => {
+          const rect = carte.getBoundingClientRect();
+          if (rect.top <= window.innerHeight - rect.height / 2) {
+            carte.classList.add('animation-defilement');
+          }
+          if (rect.bottom <= 0 || rect.top >= window.innerHeight) {
+            carte.classList.remove('animation-defilement');
+          }
+        });
+      };
+      window.addEventListener('scroll', gererDefilement);
+      return () => window.removeEventListener('scroll', gererDefilement);
   }, []);
 
   // Affichage du chargement ou de l'erreur si nécessaire
   if (chargement) return 'Chargement en cours...';
   if (erreur) return 'Erreur lors du chargement des données';
-
+  
   // Affichage des données récupérées
   return (
     <div className="ProjetJPO">
+      
       
       {donnees.map((enregistrement, index) => (
         <div key={index} className="carte" ref={el => refCartes.current[index] = el}>
