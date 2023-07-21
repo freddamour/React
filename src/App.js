@@ -1,6 +1,6 @@
 // Importation des dépendances nécessaires
 import React from 'react';
-
+import Button from 'react-bootstrap/Button';
 import ProjetFlutter from './Projets/ProjetFlutter/ProjetFlutter';
 import ProjetJPO from './Projets/ProjetJPO/ProjetJPO';
 
@@ -10,6 +10,7 @@ function App() {
   return (
     <div className="app">
       <div><h1>ProjetJPO</h1></div>
+      <Button>Boostrap ok</Button>
       <ProjetJPO></ProjetJPO>
       
       <div><h1>ProjetFlutter</h1></div>
